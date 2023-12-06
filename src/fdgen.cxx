@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
 	std::string inFile, outFile;
 
 	if(argc==1){
-		inFile = "/afs/cern.ch/user/s/shuaiy/public/starlight/decayPsi2S/testFiles/slight_CohPsi2S_4Feeddown_0001.out";
+	        inFile = "/afs/cern.ch/user/l/lualcerr/decayPsi2S/slight.out"; // "/afs/cern.ch/user/s/shuaiy/public/starlight/decayPsi2S/testFiles/slight_CohPsi2S_4Feeddown_0001.out";
 		outFile = "test";
 	}
 	else if(argc==3){

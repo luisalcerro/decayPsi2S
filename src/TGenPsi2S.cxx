@@ -116,7 +116,8 @@ void TGenPsi2S::EventLoop() {
     while(true) {
 
       fPart->Clear();
-      fDec->Decay(100443, &vgen);
+      fDec->Decay(100553, &vgen);
+      //fDec->Decay(100553, &vgen); //decaying Y(2S) 
       fDec->ImportParticles(fPart);
 
       if( AcceptDecay() ) break;
@@ -175,7 +176,7 @@ bool TGenPsi2S::PolarizedJpsi() {
   for(int i=0; i<fPart->GetEntries(); i++) {
     TParticle *part = dynamic_cast<TParticle*>( fPart->At(i) );
 
-    if( part->GetPdgCode() == 443 ) {
+    if( part->GetPdgCode() == 553 ) {
       idx = i;
       break;
     }
@@ -236,7 +237,7 @@ void TGenPsi2S::KeepFinalOnly() {
   for(int i=0; i<fPart->GetEntries(); i++) {
     TParticle *part = dynamic_cast<TParticle*>( fPart->At(i) );
 
-    if( part->GetPdgCode() == 443 ) {
+    if( part->GetPdgCode() == 553 ) {
       to_remove.push_back( part->GetFirstDaughter() );
       to_remove.push_back( part->GetLastDaughter() );
       continue;
@@ -262,7 +263,7 @@ bool TGenPsi2S::AcceptDecay() {
   for(int i=0; i<fPart->GetEntries(); i++) {
     TParticle *part = dynamic_cast<TParticle*>( fPart->At(i) );
 
-    if( part->GetPdgCode() == 443 ) {
+    if( part->GetPdgCode() == 553 ) {
       idx0 = part->GetFirstDaughter();
       idx1 = part->GetLastDaughter();
       break;
